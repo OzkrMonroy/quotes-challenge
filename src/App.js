@@ -1,20 +1,16 @@
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import QuotesListPage from './components/quoteListPage/quotes-list-page.component';
+import RandomQuotePage from './components/randomQuotePage/random-quote-page.component';
 
 function App() {
-  return (
-    <div className="App">
-      <div className="quote-container">
-        <p className="quote">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia beatae qui fuga illum recusandae maxime esse deserunt laboriosam quas distinctio reprehenderit ratione, magnam harum, aut optio obcaecati natus praesentium cupiditate!"</p>
-        <div className="quote-footer">
-          <div className="quote-footer-container">
-            <p>Bill Gates</p>
-            <span>business</span>
-          </div>
-        </div>
-        <button className="get-random-quote" type="button">Get random quote</button>
-      </div>
-    </div>
-  );
+	return (
+    <Router>
+      <Switch>
+        <Route exact path='/' component={RandomQuotePage}/>
+        <Route exact path='/:quoteAuthor' component={QuotesListPage}/>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;
