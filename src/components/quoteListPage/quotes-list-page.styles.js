@@ -21,3 +21,28 @@ export const TitleList = styled.h1`
   padding-left: 3.4rem;
   color: #333;
 `
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+export const PreviousPage = styled.span`
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('/arrow_left.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+`
+export const NextPage = styled.span`
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('/arrow_right.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+`
