@@ -6,7 +6,7 @@ const RandomQuote = ({quote}) => {
   return (
     <QuoteContainer>
       <Quote marginBottom={2}>"{quoteText}"</Quote>
-      <QuoteFooterLink to={`/${encodeURI(quoteAuthor)}`}>
+      <QuoteFooterLink to={`/author/${encodeURI(quoteAuthor)}`}>
         <QuoteFooterContainer>
           <p>{quoteAuthor}</p>
           <span>{quoteGenre}</span>

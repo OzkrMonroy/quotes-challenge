@@ -21,6 +21,7 @@ export const GetRandomQuoteButton = styled.button`
 	top: 1rem;
 	right: 3rem;
 	border: none;
+	outline: none;
 	background: transparent;
 	color: #333;
 	font-size: 0.85rem;

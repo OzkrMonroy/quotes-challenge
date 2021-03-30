@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
+import getQuotesData from '../../utils/getQuotesData';
+import Error from '../error/error-component';
 import Spinner from '../spinner/spinner.component';
 import { Quote } from "../styledComponents/quote.styles"
 import { PaginationContainer, PreviousPage, QuoteListContainer, TitleList, NextPage } from './quotes-list-page.styles'
 
 const QuotesListPage = ({match}) => {
   const { quoteAuthor } = match.params;
+  const [error, setError] = useState(false);
   const [quotes, setQuotes] = useState(null);
   const [nextPage, setNextPage] = useState(1);
   const [currentPage, setCurrentPage] = useState(0);
@@ -19,20 +22,19 @@ const QuotesListPage = ({match}) => {
   const getQuoteByAuthor = async (page) => {
     window.scroll({top: 0, left: 0, behavior: 'smooth'});
 
-    const url = `https://quote-garden.herokuapp.com/api/v3/quotes?author=${quoteAuthor}&page=${page}&limit=10`
-    try {
-      const response = await fetch(url);
-      const quotesData = await response.json();
+    const { quotesData, error } = await getQuotesData(`https://quote-garden.herokuapp.com/api/v3/quotes?author=${quoteAuthor}&page=${page}&limit=10`);
 
-      const {data, pagination: { currentPage, totalPages }, totalQuotes} = quotesData;
-
-      setQuotes(data)
-      setCurrentPage(currentPage);
-      setTotalPages(totalPages);
-      setQuotesCount(totalQuotes)
-    } catch (error) {
-      console.log(error);
+    if(error){
+      setError(error);
+      return;
     }
+
+    const {data, pagination: { currentPage, totalPages }, totalQuotes} = quotesData;
+    setQuotes(data)
+    setCurrentPage(currentPage);
+    setTotalPages(totalPages);
+    setQuotesCount(totalQuotes);
+    setError(error);
   };
 
   const handlePreviousPage = () => {
@@ -55,7 +57,9 @@ const QuotesListPage = ({match}) => {
       {quotes ? (quotes.map(quote => (
         <Quote key={quote._id} marginBottom={4}>"{quote.quoteText}"</Quote>
       ))) : (
-        <Spinner/>
+        <>
+          {error ? <Error typeError={1}/> : <Spinner/>}
+        </>
       )}
       {quotes && (
         <PaginationContainer>
