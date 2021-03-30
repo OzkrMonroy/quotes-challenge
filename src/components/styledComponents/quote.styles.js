@@ -32,11 +32,27 @@ export const Quote = styled.p`
 `
 
 export const QuoteFooterLink = styled(Link)`
+  position: relative;
   display: block;
 	width: 100%;
 	padding-left: 1.2rem;
   text-decoration: none;
   color: #333;
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 3rem;
+    height: 1rem;
+    background-image: url('/arrow_show.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   &:hover div {
     background: #333;

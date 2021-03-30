@@ -17,10 +17,42 @@ export const QuoteListContainer = styled.div`
   }
 `
 export const TitleList = styled.h1`
+  display: inline-block;
   margin-bottom: 8rem;
-  padding-left: 3.4rem;
+  padding-left: 2.4rem;
   color: #333;
+  position: relative;
+  
+  &::after {
+    content: ${props => props.counter ? props.counter : '0'};
+    font-size: 1rem;
+    border-radius: 50%;
+    display: inline-block;
+    padding: .25rem .68rem .5rem .7rem;
+    background: #333;
+    color: white;
+    position: absolute;
+    margin-left: .5rem;
+    top: -.5rem;
+  }
+
+  @media ${device.mobileL}{
+    padding-left: 3.4rem;
+  }
+
 `
+export const QuotesCountContainer = styled.span`
+  font-size: 1rem;
+  border-radius: 50%;
+  display: inline-block;
+  padding: .2rem .55rem;
+  background: #333;
+  color: white;
+  position: absolute;
+  top: -.2rem;
+  left: 17.5rem;
+`
+
 export const PaginationContainer = styled.div`
   display: flex;
   justify-content: center;

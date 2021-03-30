@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import RandomQuote from "../randomQuote/random-quote.component";
+import Spinner from "../spinner/spinner.component";
 import { AppContainer, GetRandomQuoteButton } from "./random-quote-page.styles";
 
 const RandomQuotePage = () => {
   const [quote, setQuote] = useState(null);
 
 	useEffect(() => {
-    const quoteFromLS = JSON.parse(localStorage.getItem("randomQuote"));
-    if(quoteFromLS){
-      setQuote(quoteFromLS)
+    const quoteFromSS = JSON.parse(sessionStorage.getItem("randomQuote"));
+    if(quoteFromSS){
+      setQuote(quoteFromSS)
     }else {
       getRandomQuote();
     }
@@ -21,8 +22,7 @@ const RandomQuotePage = () => {
 		);
 		const quote = await response.json();
 		setQuote(quote);
-    localStorage.setItem("randomQuote", JSON.stringify(quote));
-		console.log("I'm executing");
+		sessionStorage.setItem("randomQuote", JSON.stringify(quote));
 	};
 
 	return (
@@ -36,7 +36,7 @@ const RandomQuotePage = () => {
 			{quote ? (
 				<RandomQuote quote={quote}/>
 			) : (
-				<p>Cargando</p>
+				<Spinner/>
 			)}
 		</AppContainer>
 	);

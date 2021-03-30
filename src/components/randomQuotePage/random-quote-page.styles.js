@@ -26,4 +26,19 @@ export const GetRandomQuoteButton = styled.button`
 	font-size: 0.85rem;
 	font-family: "Raleway", sans-serif;
 	cursor: pointer;
+
+	&::after {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('/sync.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+		margin-left: .3rem;
+  }
 `
