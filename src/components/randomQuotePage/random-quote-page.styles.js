@@ -17,7 +17,7 @@ export const AppContainer = styled.div`
 	}
 `
 export const GetRandomQuoteButton = styled.button`
-	position: fixed;
+	position: absolute;
 	top: 1rem;
 	right: 3rem;
 	border: none;

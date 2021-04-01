@@ -60,8 +60,9 @@ export const PaginationContainer = styled.div`
 `
 export const PreviousPage = styled.span`
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: .5rem;
   background-image: url('/arrow_left.svg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -70,8 +71,9 @@ export const PreviousPage = styled.span`
 `
 export const NextPage = styled.span`
   display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  margin-right: .5rem;
   background-image: url('/arrow_right.svg');
   background-repeat: no-repeat;
   background-size: cover;
