@@ -10,7 +10,7 @@ Demo: [QuotesChallengeApp](https://getrandomquotesapp.netlify.app/)
 
 * [create-react-app](https://create-react-app.dev/docs/getting-started/)
 * [Emotion](https://emotion.sh/docs/styled)
-* [Quote Garden API](pprathameshmore.github.io/QuoteGarden/)
+* [Quote Garden API](https://pprathameshmore.github.io/QuoteGarden/)
 
 ## Features
 * You can see  a random quote.
