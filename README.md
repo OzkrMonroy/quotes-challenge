@@ -45,4 +45,4 @@ You can find the challenge [here](https://devchallenges.io/challenges/8Y3J4ucAMQ
 
 
 
-[image]: https://firebasestorage.googleapis.com/v0/b/producthunt-647c4.appspot.com/o/quotesScreenApp%2Fgetrandomquotesapp.png?alt=media&token=4dcad307-02c5-498b-933a-fbef6eb5d152 "Project screenshot"
+[image]: https://firebasestorage.googleapis.com/v0/b/producthunt-647c4.appspot.com/o/AppsScreenShots%2FrandomQuotes-min.png?alt=media&token=1f2626f8-555c-455b-a10a-d0a8c09cfb5e "Project screenshot"
